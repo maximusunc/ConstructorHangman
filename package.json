@@ -1,0 +1,28 @@
+{
+  "name": "constructorhangman",
+  "version": "1.0.0",
+  "description": "Constructor Hangman Game",
+  "main": "ConstructorHangman.js",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ConstructorHangman.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximusunc/ConstructorHangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "constructorJS",
+    "inquirer"
+  ],
+  "author": "Max Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximusunc/ConstructorHangman/issues"
+  },
+  "homepage": "https://github.com/maximusunc/ConstructorHangman#readme"
+}
