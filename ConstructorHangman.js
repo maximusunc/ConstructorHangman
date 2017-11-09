@@ -1,4 +1,4 @@
-var word = require("./words");
+var wordGenerator = require("./words");
 var letter = require("./letter");
 var inquirer = require("inquirer");
 
@@ -6,7 +6,8 @@ console.log("Hello, and welcome to Constructor Hangman!\nHere is your first word
 
 function newGame() {
 	var guesses = 10;
-	var currentWord = word[Math.floor(Math.random() * word.length)];
+	var word = new wordGenerator();
+	var currentWord = word.currentWord();
 	console.log(currentWord);
 	var newWord = new letter(currentWord);
 	var hidden = newWord.blanks();
@@ -31,18 +32,11 @@ function newGame() {
 						if (lettersArr.includes(letterChosen)) {
 							console.log("You already guessed this letter...");
 						} else {
+							lettersArr.push(letterChosen);
 							if (currentWord.includes(letterChosen)) {
-								console.log("Correct!!!");
-								for (var i = 0; i < word.length; i++) {
-									if (currentWord[i] === letterChosen) {
-										hidden[i] = currentWord[i];
-										lettersArr.push(letterChosen);
-									};
-								};
+								newWord.correctLetters(letterChosen, hidden, currentWord);
 							} else {
 								guesses--;
-								lettersArr.push(letterChosen);
-								console.log("Nope! Guess again!");
 							};
 						};
 					} else {

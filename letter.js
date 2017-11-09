@@ -10,6 +10,15 @@ letter.prototype.blanks = function() {
 	return blanksArr;
 };
 
+letter.prototype.correctLetters = function(letterChosen, hidden, currentWord) {
+	console.log("Correct!!!");
+	for (var i = 0; i < currentWord.length; i++) {
+		if (currentWord[i] === letterChosen) {
+			hidden[i] = currentWord[i];
+		};
+	};
+};
+
 letter.prototype.lettersGuessed = function() {
 	var lettersGuessed = [];
 	return lettersGuessed;
